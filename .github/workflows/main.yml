@@ -22,5 +22,6 @@ jobs:
           wait-on: http://localhost:5173
           parallel: true
         env:
+          VITE_API_URL: http://localhost:5173
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
