@@ -13,7 +13,7 @@ jobs:
       - name: Install modules
         run: npm install
       - name: Install dependencies and build
-        uses: cypress-io/github-action@v3
+        uses: cypress-io/github-action@v5
         with:
           browser: chrome
           headless: true
