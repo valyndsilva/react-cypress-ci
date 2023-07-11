@@ -11,8 +11,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install modules
-        run: npm ci
-      - name: Cypress
+        run: npm install
+      - name: Install dependencies and build
         uses: cypress-io/github-action@v3
         with:
           browser: chrome
