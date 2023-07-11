@@ -9,16 +9,19 @@ jobs:
         containers: [1, 2, 3]
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Install modules
         run: npm install
-      - name: Install dependencies and build
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
+          build: npm run build
+          start: npm run dev
           browser: chrome
           headless: true
           record: true
-          start: npm run dev
           wait-on: http://localhost:5173
           parallel: true
         env:
