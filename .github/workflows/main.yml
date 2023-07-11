@@ -20,4 +20,7 @@ jobs:
           record: true
           start: npm run dev
           wait-on: http://localhost:5173
-      
+          parallel: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
